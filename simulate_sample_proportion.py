@@ -22,4 +22,4 @@ def simulate_sample_proportion(population, population_proportion, sample_size, n
 
     print(result)
 
-simulate_sample_proportion(10000, 0.72, 1000, 5)
+simulate_sample_proportion(10000, 0.72, 2000, 500)
