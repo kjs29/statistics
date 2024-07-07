@@ -1,5 +1,6 @@
 import random
 import matplotlib.pyplot as plt
+import create_histogram
 
 def simulate_sample_proportion(population, population_proportion, sample_size, number_of_simulation):
     # Objective: To test how sample proportions behave when we already know what population proportion is.
@@ -20,6 +21,8 @@ def simulate_sample_proportion(population, population_proportion, sample_size, n
     for i in range(number_of_simulation):
         result[i] = conduct_sample()
 
-    print(result)
+    # print(result)
+    return result
 
-simulate_sample_proportion(10000, 0.72, 2000, 500)
+s1 = simulate_sample_proportion(30000, 0.8, 1000, 10000)
+create_histogram.plot_histogram(s1, 45, "Histogram for sample proportions", "Sample proportions", "Frequency")
