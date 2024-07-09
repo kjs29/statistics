@@ -1,12 +1,20 @@
+import sys
+import os
 import random
 import matplotlib.pyplot as plt
+
+# Add the parent directory to the system path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import create_histogram
 
 def simulate_sample_proportion(population, population_proportion, sample_size, number_of_simulation):
-    # Objective: To test how sample proportions behave when we already know what population proportion is.
-    # Scenario: Company A conducted a survey with a question to an entire population, "Is one's effort more important than the talent?"
-    #           People could either say yes or no to the question.
-    #           Now We'd like to know how sample proportions behave.
+    """
+    Objective: To test how sample proportions behave when we already know what population proportion is.
+    Scenario: Company A conducted a survey with a question to an entire population, "Is one's effort more important than the talent?"
+              People could either say yes or no to the question.
+              Now We'd like to know how sample proportions behave.
+    """
     
     entire_sample_set = ['yes'] * int(population_proportion * population) + ['no'] * int((1 - population_proportion) * population)
     
